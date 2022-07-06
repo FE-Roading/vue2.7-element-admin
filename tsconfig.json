@@ -13,13 +13,20 @@
     "useDefineForClassFields": true,
     "sourceMap": true,
     "baseUrl": ".",
+    "typeRoots": [
+      "./node_modules/@types/",
+      "./types"
+    ],
     "types": [
       "webpack-env"
     ],
     "paths": {
       "@/*": [
         "src/*"
-      ]
+      ],
+      "#/*": [
+        "./types/*"
+      ],
     },
     "lib": [
       "esnext",
@@ -33,9 +40,12 @@
     "src/**/*.tsx",
     "src/**/*.vue",
     "tests/**/*.ts",
-    "tests/**/*.tsx"
+    "tests/**/*.tsx",
+    "types/**/*",
+    "package.json"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "dist"
   ]
 }
