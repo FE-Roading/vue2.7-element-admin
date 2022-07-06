@@ -6,16 +6,21 @@ node_modules
 # local env files
 .env.local
 .env.*.local
+/.pnp
+.pnp.js
 
 # Log files
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+.eslintcache
+.stylelintcache
 
 # Editor directories and files
 .idea
 .vscode
+.DS_Store
 *.suo
 *.ntvs*
 *.njsproj
