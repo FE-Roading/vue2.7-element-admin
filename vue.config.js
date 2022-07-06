@@ -1,7 +1,6 @@
 "use strict"
 
 const { defineConfig } = require("@vue/cli-service")
-const webpack = require("webpack")
 const path = require("path")
 const pkg = require("./package.json")
 
@@ -26,11 +25,6 @@ module.exports = defineConfig({
   productionSourceMap: process.env.BUILD_MODE !== "prod",
   devServer: {
     port: port,
-    open: true,
-    overlay: {
-      warnings: false,
-      errors: true,
-    },
     // proxy: {
     //   '/api': {
     //     target: 'http://www.ykt.com/',//接口域名
@@ -48,12 +42,27 @@ module.exports = defineConfig({
       alias: {
         "@": resolve("src"),
       },
+      fallback: { path: require.resolve("path-browserify") },
     },
-    chainWebpack: (config) => {
-      config.plugin("define").tap((args) => {
-        args[0].__APP_INFO__ = JSON.stringify(__APP_INFO__)
-        return args
+  },
+  chainWebpack: (config) => {
+    config.plugin("define").tap((args) => {
+      args[0].__APP_INFO__ = JSON.stringify(__APP_INFO__)
+      return args
+    })
+
+    // set svg-sprite-loader
+    config.module.rule("svg").exclude.add(resolve("src/assets/icons")).end()
+    config.module
+      .rule("icons")
+      .test(/\.svg$/)
+      .include.add(resolve("src/assets/icons"))
+      .end()
+      .use("svg-sprite-loader")
+      .loader("svg-sprite-loader")
+      .options({
+        symbolId: "icon-[name]",
       })
-    },
+      .end()
   },
 })
