@@ -5,16 +5,12 @@
   </div>
 </template>
 
-<script lang="ts">
-  import { Component, Vue } from "vue-property-decorator"
+<script lang="ts" setup>
   import HelloWorld from "./components/HelloWorld.vue"
 
-  @Component({
-    components: {
-      HelloWorld,
-    },
-  })
-  export default class App extends Vue {}
+  import { test } from "@/utils/test"
+
+  test()
 </script>
 
 <style lang="less">
