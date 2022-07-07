@@ -35,7 +35,7 @@
   }
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
   .wscn-http404-container {
     transform: translate(-50%, -50%);
     position: absolute;

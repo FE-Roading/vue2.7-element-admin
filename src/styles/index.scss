@@ -1,12 +1,13 @@
+@import "./theme.scss";
+
 body {
   height: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizelegibility;
-  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial,
-    sans-serif;
+  font-family: "PingFang SC", "Source Han Sans", "Microsoft Yahei Font", "微软雅黑", "Hiragino Sans GB", Arial,
+  sans-serif;
 }
-
 label {
   font-weight: 700;
 }
@@ -36,7 +37,7 @@ a,
 a:focus,
 a:hover {
   cursor: pointer;
-  color: inherit;
+  color: #1f8dfb;
   text-decoration: none;
 }
 

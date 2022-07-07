@@ -10,7 +10,7 @@
     console.log("Btn click")
   }
 </script>
-<style lang="less">
+<style lang="scss">
   h2 {
     border-bottom: 1px solid blue;
   }

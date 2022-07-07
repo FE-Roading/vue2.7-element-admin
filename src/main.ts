@@ -4,13 +4,12 @@ import Router from "vue-router";
 import { PiniaVuePlugin } from 'pinia'
 import ElementUI from "element-ui"
 
-import "element-ui/lib/theme-chalk/index.css"
 import "normalize.css/normalize.css" // A modern alternative to CSS resets
-import "./styles/index.less"
+import "./styles/index.scss"
 
 import router from "./router"  // <--- export default new Router(...)
 
-Vue.use(ElementUI)
+Vue.use(ElementUI, { size: 'small' })
 Vue.use(PiniaVuePlugin)
 import pinia from "./store"
 
