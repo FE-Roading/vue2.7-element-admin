@@ -1,9 +1,17 @@
-import Vue from "vue"
 import Router from "vue-router"
 
-Vue.use(Router)
-
 export const constantRoutes = [
+  {
+    path: "/login",
+    component: () => import("@/pages/login/index.vue"),
+    hidden: true,
+  },
+
+  {
+    path: "/404",
+    component: () => import("@/pages/404.vue"),
+    hidden: true,
+  },
   {
     path: "/",
     component: () => import("@/pages/dashboard/index.vue"),

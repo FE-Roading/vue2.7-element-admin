@@ -3,29 +3,33 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "build:dev": "vue-cli-service build --mode dev",
-    "build:test": "vue-cli-service build --mode test",
-    "build:prod": "vue-cli-service build --mode prod",
     "lint": "vue-cli-service lint",
+    "build:dev": "vue-cli-service build --mode dev",
+    "build:prod": "vue-cli-service build --mode prod",
+    "build:test": "vue-cli-service build --mode test",
+    "commit": "git-cz",
     "lint:fix": "vue-cli-service lint --fix",
     "prepare": "husky install",
-    "commit": "git-cz"
+    "start": "vue-cli-service serve"
   },
   "dependencies": {
+    "@vue/composition-api": "^1.6.2",
     "axios": "^0.27.2",
     "core-js": "^3.8.3",
     "element-ui": "^2.15.9",
     "mockjs": "^1.1.0",
+    "normalize.css": "^8.0.1",
     "nprogress": "^0.2.0",
     "pinia": "^2.0.14",
+    "qs": "^6.11.0",
     "vue": "^2.7.0",
     "vue-router": "3.x"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
+    "@types/nprogress": "^0.2.0",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
     "@vue/cli-plugin-babel": "~5.0.0",
@@ -55,11 +59,12 @@
     "stylelint-prettier": "^2.0.0",
     "svg-sprite-loader": "^6.0.11",
     "typescript": "~4.5.5",
+    "vue-cli-plugin-pinia": "~0.1.3",
     "vue-template-compiler": "^2.6.14"
   },
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-customizable"
+      "path": "node_modules/cz-customizable"
     }
   }
 }
