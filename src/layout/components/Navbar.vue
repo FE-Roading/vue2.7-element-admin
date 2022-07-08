@@ -45,6 +45,7 @@
       ...mapState(useAppStore, {
         isOpened: (store) => !store.isCollapsed,
       }),
+      avatar: () => "https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif",
     },
     methods: {
       ...mapActions(useAppStore, {
@@ -61,7 +62,7 @@
 
 <style lang="scss" scoped>
   .navbar {
-    height: 50px;
+    height: 48px;
     overflow: hidden;
     position: relative;
     background: #fff;

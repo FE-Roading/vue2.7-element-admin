@@ -35,7 +35,7 @@
 <style scoped>
   .sub-el-icon {
     color: currentColor;
-    width: 1em;
-    height: 1em;
+    width: 16px;
+    height: 16px;
   }
 </style>

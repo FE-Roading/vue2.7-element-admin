@@ -66,28 +66,57 @@
       border: none;
       height: 100%;
       width: 100% !important;
+      background: transparent;
+
+      padding: 20px 4px;
+
+      .el-menu--inline{
+        padding: 0;
+        background: $subMenuBg !important;
+      }
+      
+      .el-submenu__title,
+      .el-menu-item {
+        border-radius: 4px;
+        height: 40px;
+        line-height: 40px;
+
+        background-color: transparent !important;
+
+        &:hover{
+          color: $menuActiveText !important;
+        }
+      }
+
+      .el-submenu__title{
+        padding: 0 13px 0 16px;
+      }
+
+      .el-submenu__icon-arrow{
+        color: $menuText !important;
+      }
     }
 
-    // menu hover
+    // 一级菜单鼠标悬浮和激活的高亮显示
     .submenu-title-noDropdown,
-    .el-submenu__title {
+    .el-submenu > .el-submenu__title {
+      background-color: transparent !important;
+
       &:hover {
         background-color: $menuHover !important;
       }
     }
+    .submenu-title-noDropdown.is-active,
+    .el-submenu.is-active > .el-submenu__title{
+      background-color: $menuHover !important;
+      color: $menuActiveText !important;
 
-    .is-active>.el-submenu__title {
-      color: $subMenuActiveText !important;
-    }
-
-    & .nest-menu .el-submenu>.el-submenu__title,
-    & .el-submenu .el-menu-item {
-      min-width: $sideBarWidth !important;
-      background-color: $subMenuBg !important;
-
-      &:hover {
-        background-color: $subMenuHover !important;
+      .el-submenu__icon-arrow{
+        color: $menuActiveText !important;
       }
+    }
+    .nest-menu .el-submenu > .el-submenu__title{
+      background-color: transparent !important;
     }
   }
 
@@ -200,7 +229,7 @@
   .nest-menu .el-submenu>.el-submenu__title,
   .el-menu-item {
     &:hover {
-      // you can use $subMenuHover
+      // you can use $menuHover
       background-color: $menuHover !important;
     }
   }

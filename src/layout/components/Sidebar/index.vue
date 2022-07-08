@@ -31,6 +31,8 @@
   import SidebarItem from "./SidebarItem"
   import variables from "@/styles/variables.scss"
 
+  console.log("variables: ", variables)
+
   export default {
     components: { SidebarItem, Logo },
     computed: {
@@ -51,8 +53,16 @@
         return path
       },
       variables() {
-        return variables
+        return {
+          menuBg: "#285FEE",
+          menuText: "#95b6f8",
+          menuActiveText: "#fff",
+        }
       },
     },
   }
 </script>
+
+<style lang="scss" scoped>
+  @import "~@/styles/variables.scss";
+</style>
