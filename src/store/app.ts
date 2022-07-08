@@ -11,7 +11,12 @@ type AppState = {
   token: string | null
   loading: boolean
   userInfo: any
+  isCollapsed: boolean
+  isCollapsedWithoutAnimation: boolean
+  device: DeviceType
+  fixedHeader: boolean
 }
+type DeviceType = "desktop" | "mobile"
 
 const useAppStore = defineStore({
   id: "app",
@@ -19,6 +24,10 @@ const useAppStore = defineStore({
     token: getToken(),
     loading: false,
     userInfo: null,
+    isCollapsed: false,
+    isCollapsedWithoutAnimation: true,
+    device: "desktop",
+    fixedHeader: true,
   }),
   getters: {
     getterToken(): string | null {
@@ -31,6 +40,17 @@ const useAppStore = defineStore({
   actions: {
     toggleLoading(status: boolean) {
       this.loading = status
+    },
+    toggleSideBar() {
+      this.isCollapsed = !this.isCollapsed
+      this.isCollapsedWithoutAnimation = false
+    },
+    closeSideBar(withoutAnimation: boolean) {
+      this.isCollapsed = false
+      this.isCollapsedWithoutAnimation = withoutAnimation
+    },
+    toggleDevice(device: DeviceType) {
+      this.device = device
     },
     async getUserInfo(params?: Recordable<any>) {
       const userInfo = await getUserInfo(params)

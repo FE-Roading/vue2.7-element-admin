@@ -1,5 +1,7 @@
 import Router from "vue-router"
 
+import Layout from "@/layout/index.vue"
+
 export const constantRoutes = [
   {
     path: "/login",
@@ -12,10 +14,19 @@ export const constantRoutes = [
     component: () => import("@/pages/404.vue"),
     hidden: true,
   },
+
   {
     path: "/",
-    component: () => import("@/pages/dashboard/index.vue"),
-    hidden: true,
+    component: Layout,
+    redirect: "/dashboard",
+    children: [
+      {
+        path: "dashboard",
+        name: "Dashboard",
+        component: import("@/pages/dashboard/index.vue"),
+        meta: { title: "Dashboard", icon: "dashboard" },
+      },
+    ],
   },
 ]
 
