@@ -66,6 +66,8 @@ const useAppStore = defineStore({
       await this.getUserInfo(data)
     },
     async logout() {
+      this.userInfo = null
+      this.token = null
       clearLoginData()
       resetRouter()
     },

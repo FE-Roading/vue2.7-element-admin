@@ -20,7 +20,7 @@
           <a target="_blank" href="https://panjiachen.github.io/vue-element-admin-site/#/">
             <el-dropdown-item>Docs</el-dropdown-item>
           </a>
-          <el-dropdown-item divided @click.native="logout">
+          <el-dropdown-item divided @click.native="onLogout">
             <span style="display: block">Log Out</span>
           </el-dropdown-item>
         </el-dropdown-menu>
@@ -51,7 +51,7 @@
         toggleSideBar: "toggleSideBar",
         logout: "logout",
       }),
-      async logout() {
+      async onLogout() {
         await this.logout()
         this.$router.push(`/login?redirect=${this.$route.fullPath}`)
       },
