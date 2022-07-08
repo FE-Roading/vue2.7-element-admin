@@ -12,5 +12,4 @@ module.exports = {
     "selector-id-pattern": "^[a-z][a-zA-Z0-9_-]+$",
     "keyframes-name-pattern": "^[a-z][a-zA-Z0-9_-]+$",
   },
-  "ignoreFiles": ["**/*.js", "node_modules/**/*", "~element-ui/**/*"]
 }
